@@ -1,0 +1,179 @@
+/* Estilos para el cuerpo de la página */
+body {
+    /* Elimina el margen predeterminado del cuerpo */
+    margin: 0;
+
+    /* Elimina el relleno predeterminado del cuerpo */
+    padding: 0;
+
+    /* Establece una imagen de fondo centrada y fija */
+    background: url('../../04-Imagenes/Iniciobg.jpg') no-repeat center center fixed;
+
+    /* Ajusta el tamaño de la imagen de fondo para cubrir todo el cuerpo */
+    background-size: cover;
+
+    /* Usa un modelo de caja flexible para el cuerpo */
+    display: flex;
+
+    /* Centra verticalmente el contenido del cuerpo */
+    align-items: center;
+
+    /* Centra horizontalmente el contenido del cuerpo */
+    justify-content: center;
+
+    /* Establece la altura del cuerpo al 100% del viewport height */
+    height: 100vh;
+}
+
+/* Estilos para centrar contenido */
+.center-container {
+    /* Centra el texto dentro del contenedor */
+    text-align: center;
+}
+
+/* Estilos para la imagen con id 'imagen' */
+#imagen {
+    /* Ajusta el ancho de la imagen al 100% del contenedor */
+    width: 70%;
+
+    /* Fija el ancho máximo de la imagen a 700 píxeles */
+    max-width: 700px;
+
+    /* Establece la opacidad inicial de la imagen */
+    opacity: 1;
+
+    /* Aplica una transición de 1 segundo a la propiedad de opacidad */
+    transition: opacity 1s;
+}
+
+/* Estilos adicionales para la imagen cuando tiene la clase 'oculto' */
+#imagen.oculto {
+    /* Cambia la opacidad a 0 cuando la clase 'oculto' está presente */
+    opacity: 0;
+}
+
+/* Estilos para el elemento con id 'pulsa' */
+#pulsa {
+    /* Fija el tamaño del texto a 1.5 em */
+    font-size: 1.5em;
+
+    /* Establece el color del texto a negro */
+    color: #000000;
+
+    /* Establece la opacidad inicial del elemento */
+    opacity: 1;
+
+    /* Aplica una transición de 1 segundo a la propiedad de opacidad */
+    transition: opacity 1s;
+}
+
+/* Estilos adicionales para el elemento 'pulsa' cuando tiene la clase 'oculto' */
+#pulsa.oculto {
+    /* Cambia la opacidad a 0 cuando la clase 'oculto' está presente */
+    opacity: 0;
+}
+
+/* Estilos para la tabla con id 'tabla' */
+#tabla {
+    /* Inicialmente oculta la tabla */
+    display: none;
+
+    /* Establece la opacidad inicial de la tabla a 0 */
+    opacity: 0;
+
+    /* Aplica una transición de 1 segundo a la propiedad de opacidad */
+    transition: opacity 1s;
+
+    /* Fija el color de fondo de la tabla */
+    background-color: #4a4a4a;
+
+    /* Fija el color del texto de la tabla */
+    color: #d4af37;
+
+    /* Fija un borde de 1 píxel sólido con color especificado */
+    border: 1px solid #d4af37;
+
+    /* Aplica un radio de borde de 15 píxeles para esquinas redondeadas */
+    border-radius: 15px;
+
+    /* Añade un espacio interno de 20 píxeles alrededor del contenido de la tabla */
+    padding: 20px;
+
+    /* Fija el tamaño del texto de la tabla a 1.6 em */
+    font-size: 1.6em;
+
+    /* Centra el texto dentro de las celdas de la tabla */
+    text-align: center;
+
+    /* Fija la posición absoluta para la tabla */
+    position: absolute;
+
+    /* Coloca la tabla en la mitad superior del viewport */
+    top: 50%;
+
+    /* Coloca la tabla en la mitad izquierda del viewport */
+    left: 50%;
+
+    /* Centra la tabla exactamente en el centro del viewport */
+    transform: translate(-50%, -50%);
+
+    /* Espaciado entre las celdas de la tabla */
+    border-spacing: 20px;
+}
+
+/* Estilos adicionales para la tabla cuando tiene la clase 'mostrado' */
+#tabla.mostrado {
+    /* Muestra la tabla cuando la clase 'mostrado' está presente */
+    display: table;
+
+    /* Cambia la opacidad a 1 cuando la clase 'mostrado' está presente */
+    opacity: 1;
+}
+
+/* Estilos para los enlaces dentro de la tabla */
+#tabla a {
+    /* Fija el color de los enlaces dentro de la tabla */
+    color: #d4af37;
+
+    /* Elimina el subrayado de los enlaces */
+    text-decoration: none;
+
+    /* Aplica una transición de 0.5 segundos al color de los enlaces */
+    transition: color 0.5s;
+}
+
+/* Estilos adicionales para los enlaces dentro de la tabla al pasar el ratón sobre ellos */
+#tabla a:hover {
+    /* Cambia el color de fondo de los enlaces al pasar el ratón sobre ellos */
+    background: #8b4513;
+
+    /* Aplica un radio de borde de 20 píxeles para esquinas redondeadas */
+    border-radius: 20px;
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 600px) {
+    /* Estilos para la imagen con id 'imagen' en pantallas pequeñas */
+    #imagen {
+        /* Ajusta el ancho de la imagen al 90% del contenedor */
+        width: 90%;
+    }
+
+    /* Estilos para la tabla con id 'tabla' en pantallas pequeñas */
+    #tabla {
+        /* Ajusta el ancho de la tabla al 90% del contenedor */
+        width: 90%;
+
+        /* Ajusta el tamaño del texto de la tabla */
+        font-size: 1.2em;
+
+        /* Ajusta el espacio interno de la tabla */
+        padding: 10px;
+    }
+
+    /* Estilos para el elemento con id 'pulsa' en pantallas pequeñas */
+    #pulsa {
+        /* Ajusta el tamaño del texto */
+        font-size: 1.2em;
+    }
+}

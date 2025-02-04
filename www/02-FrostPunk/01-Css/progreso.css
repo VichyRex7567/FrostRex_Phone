@@ -1,0 +1,7 @@
+/* Estilos para las imágenes */
+img {
+    max-width: 100%; /* Ancho máximo del 100% para que la imagen sea responsive */
+    height: auto; /* Altura automática para mantener la proporción */
+    border-radius: 15px; /* Borde redondeado de 15px */
+    margin-bottom: 20px; /* Añade margen inferior a las imágenes */
+}

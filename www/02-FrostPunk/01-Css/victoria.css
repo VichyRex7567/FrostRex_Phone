@@ -1,0 +1,19 @@
+/* Estilos para el contenedor de video */
+#videoContainer {
+    display: none; /* Oculto por defecto */
+    width: 80%; /* Ancho del 80% del contenedor padre */
+    position: fixed; /* Posición fija para mantenerlo en su lugar */
+    top: 50%; /* Coloca el borde superior del contenedor en el centro vertical */
+    left: 50%; /* Coloca el borde izquierdo del contenedor en el centro horizontal */
+    transform: translate(-50%, -50%); /* Centra el contenedor en la pantalla */
+}
+
+/* Estilos para el mensaje de victoria */
+#victoriaV {
+    text-align: center; /* Alineación central del texto */
+    position: absolute; /* Posición absoluta para colocarlo en un lugar específico */
+    top: 50%; /* Coloca el borde superior del mensaje en el centro vertical */
+    left: 50%; /* Coloca el borde izquierdo del mensaje en el centro horizontal */
+    transform: translate(-50%, -50%); /* Centra el mensaje en la pantalla */
+    margin-bottom: 20px; /* Añade margen inferior al mensaje de victoria */
+}

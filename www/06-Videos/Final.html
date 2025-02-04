@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Final</title>
+
+    <link rel="stylesheet" href="../02-FrostPunk/01-Css/modales.css">
+    <link rel="stylesheet" href="../02-FrostPunk/01-Css/steampunkbotones.css">
+
+    <script src="../02-FrostPunk/02-Js/modales.js"></script>
+
+    <style>
+        /** Estilos para el cuerpo y el html **/
+        body, html {
+            margin: 0; /* Elimina el margen predeterminado */
+            padding: 0; /* Elimina el padding predeterminado */
+            height: 100%; /* Establece el alto al 100% del viewport */
+            display: flex; /* Usa flexbox para el diseño */
+            flex-direction: column; /* Dirección de los elementos en columna */
+            justify-content: center; /* Centra verticalmente los elementos */
+            align-items: center; /* Centra horizontalmente los elementos */
+            background-color: #000; /* Fondo negro para el video */
+        }
+
+        /** Estilos para el elemento video **/
+        video {
+            max-width: 100%; /* Ancho máximo del video al 100% */
+            max-height: 80vh; /* Altura máxima del video al 80% del viewport */
+        }
+
+        /** Estilos para el contenedor del botón **/
+        #button-container {
+            margin-top: 20px; /* Espacio de 20px arriba del contenedor del botón */
+        }
+    </style>
+</head>
+<body>
+    <video id="video" controls autoplay muted>
+        <source src="./Victoria.mp4" type="video/mp4">
+        Tu navegador no soporta la etiqueta de video.
+    </video>
+
+    <div id="button-container">
+        <button class="steampunk-button" onclick="Final()">Volver al menú.</button>
+    </div>
+
+    <!-- Modal Genérico -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body">
+                <!-- El contenido dinámico se cargará aquí -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const videoElement = document.getElementById('video');
+            videoElement.play();
+        });
+
+        function Final() {
+            var url = '../02-FrostPunk/03-Ventanas/07-Eventos/Agradecimiento.html'; // URL del archivo HTML a cargar
+            loadContent(url);
+
+            // Redirigir al menú principal después de mostrar el modal
+            setTimeout(function() {
+                window.location.href = '../index.html';
+            }, 15000); // Espera 15 segundos antes de redirigir
+        }
+    </script>
+</body>
+</html>

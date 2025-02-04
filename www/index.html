@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio.html</title>
+    <link rel="stylesheet" type="text/css" href="./01-Inicio/01-css/inicio.css">
+    <script src="./01-Inicio/02-js/inicio.js"></script>
+    <script src="cordova.js"></script>
+</head>
+<body>
+    <!-- Musica de fondo -->
+    <audio id="miAudio" autoplay>
+        <source src="./05-Musica/Inicio.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="center-container">
+        <!-- Imagen que se desvanecerá -->
+        <img id="imagen" src="./04-Imagenes/Frostlogo.png" alt="Imagen" onclick="iniciarAnimacion(),iniciarReproduccion()">
+        <br>
+        <p id="pulsa">-Pulsa para empezar-</p>
+
+        <!-- Tabla que aparecerá después del desvanecimiento de la imagen -->
+        <table id="tabla">
+            <tr>
+                <td>
+                    <a href="./02-FrostPunk/FrostPunk.html">Jugar</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="./03-Ayuda/Ayuda.html">Ayuda</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#" onclick="cerrarVentana();">Cerrar</a>
+                </td>
+
+                <script>
+                    function cerrarVentana() {
+                        navigator.app.exitApp();
+                    }
+                </script>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

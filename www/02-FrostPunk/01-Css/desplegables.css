@@ -1,0 +1,35 @@
+/* Estilos para el menú desplegable */
+.dropdown {
+    position: relative; /* Posición relativa para el contenedor */
+    display: inline-block; /* Mostrar como bloque en línea */
+    margin-right: 20px; /* Margen derecho para separación */
+}
+
+.dropdown-content {
+    display: none; /* Oculta el contenido por defecto */
+    position: absolute; /* Posición absoluta para estar fuera del flujo normal */
+    background-color: #4a4a4a; /* Color de fondo del menú */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    border-radius: 4px; /* Borde redondeado */
+    z-index: 1; /* Capa z para estar sobre otros elementos */
+}
+
+.dropdown-content a {
+    color: #ffffff; /* Color de texto */
+    padding: 12px 16px; /* Relleno interno */
+    text-decoration: none; /* Sin subrayado enlaces */
+    display: block; /* Mostrar como bloque */
+}
+
+.dropdown-content a:hover {
+    background-color: #cd853f; /* Color de fondo al pasar el ratón */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Mostrar contenido al pasar el ratón */
+}
+
+.dropdown-content {
+    top: auto; /* Reinicia la posición superior */
+    bottom: 100%; /* Coloca el menú debajo del botón */
+}

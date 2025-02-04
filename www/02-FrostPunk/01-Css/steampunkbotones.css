@@ -1,0 +1,30 @@
+/* Estilos para los botones */
+.steampunk-button {
+    display: inline-block; /* Mostrar como bloque en línea */
+    padding: 10px 20px; /* Relleno interno */
+    color: #fff; /* Color de texto blanco */
+    text-decoration: none; /* Sin decoración de enlace */
+    background-color: #4a4a4a; /* Color de fondo gris oscuro */
+    border: 2px solid #d4af37; /* Borde sólido dorado */
+    border-radius: 5px; /* Borde redondeado */
+    position: relative; /* Posición relativa */
+    overflow: hidden; /* Oculta el desbordamiento */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+    cursor: pointer; /* Cambio de cursor a mano */
+}
+
+.steampunk-button:before {
+    content: ''; /* Contenido pseudo-elemento */
+    position: absolute; /* Posición absoluta */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(45deg, #d4af37, #4a4a4a); /* Degradado diagonal */
+    z-index: -1; /* Detrás del contenido principal */
+    transition: transform 0.3s ease; /* Transición suave de transformación */
+}
+
+.steampunk-button:hover {
+    background-color: #cd853f; /* Cambio de color de fondo al pasar el ratón */
+}

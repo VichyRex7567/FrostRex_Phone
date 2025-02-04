@@ -1,0 +1,15 @@
+/* Estilos base para el cuerpo de la página */
+body {
+    margin: 0; /* Elimina el margen predeterminado del cuerpo */
+    min-height: 100vh; /* Altura mínima igual a la altura de la ventana */
+    display: flex; /* Usa flexbox para diseño flexible */
+    flex-direction: column; /* Dirección de columna para alinear verticalmente */
+    justify-content: center; /* Centra verticalmente los elementos */
+    align-items: center; /* Centra horizontalmente los elementos */
+    background: url('../../04-Imagenes/Iniciobg.jpg') no-repeat center center fixed; /* Fondo con imagen centrada y fija */
+    background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el contenedor */
+    overflow: hidden; /* Oculta el desbordamiento de contenido */
+    position: relative; /* Posición relativa para elementos posicionados internamente */
+    padding: 20px; /* Añade un relleno al cuerpo para separarlo del borde del dispositivo */
+    font-size: 11px; /* Tamaño de fuente base */
+}

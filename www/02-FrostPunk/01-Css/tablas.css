@@ -1,0 +1,32 @@
+td {
+    padding: 1px; /* Relleno interno de las celdas */
+    text-align: center; /* Alineación central del texto dentro de las celdas */
+}
+
+/* Estilos específicos para las tablas */
+.tablatop,
+.tablamid,
+.tablabot,
+.tablainf {
+    width: 100%; /* Ancho completo de las tablas específicas */
+    margin-bottom: 20px; /* Añade margen inferior a las tablas */
+    border: 2px solid #d4af37; /* Borde sólido dorado */
+    background-color: #4a4a4a; /* Color de fondo gris oscuro */
+    color: #ffffff; /* Color de texto blanco */
+}
+
+/* Media Query para dispositivos móviles con ancho máximo de 600px */
+@media (max-width: 600px) {
+    .barra {
+        width: 70%; /* Reducción del ancho de la barra de progreso */
+    }
+
+    .steampunk-button {
+        padding: 2px 4px; /* Reducción del relleno del botón */
+        font-size: 10px; /* Reducción del tamaño de fuente del botón */
+    }
+
+    img {
+        max-width: 70%; /* Reducción del ancho máximo de las imágenes */
+    }
+}

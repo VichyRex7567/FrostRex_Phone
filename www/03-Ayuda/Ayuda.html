@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayuda.html</title>
+    <link rel="stylesheet" href="./01-Css/ayuda.css">
+    <script src="./02-Js/idioma.js"></script>
+</head>
+<body>
+    <!-- Margen a la izquierda -->
+    <div class="header">
+        <div class="container logo-nav">
+            
+            <table>
+                <tr align="center">
+                    <td>
+                        <select id="idiomaSelect" name="idiomaSelect" onchange="cambiarIdioma()">
+                            <option value="espanol">Español</option>
+                            <option value="ingles">English</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+
+            <a href="#" class="logo"><img src="../04-Imagenes/Osete.jpg" width="150" height="150";></a> 
+
+            <table id="tablaEs1" name="tablaEs1">
+                <!-- Contenido de la primera tabla en español -->
+                <tr>
+                    <td>
+                        <nav class="navigation">
+                            <ul>
+                                <li><a href="../index.html">Menu.</a></li>
+                                <li><a href="#Pes1">Inicio.</a></li>
+                                <li><a href="#Pes2">Puesta en escena.</a></li>
+                                <li><a href="#Pes3">¿Cuál es el objetivo?</a></li>
+                                <li><a href="#Pes4">Diferentes acciones, tecnologías y construcciones.</a></li>
+                            </ul>
+                        </nav>
+                    </td>
+                </tr>
+            </table>
+
+            <table id="tablaEn1" name="tablaEn1" style="display: none;">
+                <!-- Contenido de la primera tabla en inglés -->
+                <tr>
+                    <td>
+                        <nav class="navigation">
+                            <ul>
+                                <li><a href="../index.html">Menu.</a></li>
+                                <li><a href="#Pen1">Home.</a></li>
+                                <li><a href="#Pen2">Staging.</a></li>
+                                <li><a href="#Pen3">What is its Objective?</a></li>
+                                <li><a href="#Pen4">Different actions, technologies and constructions.</a></li>
+                            </ul>                            
+                        </nav>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- Contenido principal con desplazamiento (scroll) -->
+    <div id="content" style="margin-left: 200px; padding: 1rem;">
+        <!-- Aquí va tu contenido principal -->
+        <table id="tablaEs2" name="tablaEs2">
+            <!-- Contenido de la segunda tabla en español -->
+            <tr>
+                <td>
+                    <div class="cTexto">
+                        <h2 id="Pes1">Inicio.</h2>
+                        <hr width="100%">
+                        <p>
+                            Esto sera una pequeña puesta en escana de un gran juego que ya existe, pero no ha sido realizado con html y menos por una unica persona, todos los vidios que van apareciendo a lo largo de este pequeño juego son fotos sacadas tal cual de una partida que he jugado, además de que he escondido unos huevos de pascua.
+                        </p>
+
+                        <h2 id="Pes2">Puesta en escena.</h2>
+                        <hr width="100%">
+                        <p>
+                            Está ambientado en un 1886 alternativo en el que las erupciones del Krakatoa y del Monte Tambora, el oscurecimiento del Sol y otros factores desconocidos provocaron un invierno volcánico mundial. Esto, a su vez, provocó la pérdida generalizada de las cosechas y la muerte de millones de personas.
+                        </p>
+
+                        <h2 id="Pes3">¿Cuál es el objetivo?</h2>
+                        <hr width="100%">
+                        <p>
+                            El objetivo es sencillo es sobrevivir 15 dias en el universo de FrostPunk, cada dia te sandra nada más empezar el dia una pequeña historia inventada para que tengas un poco de entretenimiento en esos dias que tienes bajo control.
+                            <h3>Mucho cuidado con estas cosas:</h3>
+                            <ol>
+                                <li>La comida no puede llegar a 0.</li>
+                                <li>El carbón no puede llegar a 0.</li>
+                                <li>El generador no puede explotar.</li>
+                                <li>No puedes tener la barra de frio muy alta.</li>
+                                <li>No puedes tener la barra de esperanza muy baja.</li>
+                                <li>No puedes tener la barra de descontento muy alta.</li>
+                            </ol>
+                        </p>
+
+                        <h2 id="Pes4">Diferentes acciones, tecnologías y construcciones.</h2>
+                        <hr width="100%">
+                        <p>
+                            <h3>Acciones:</h3>
+                            <ol>
+                                <li>Las acciones se explican más detalladamente en el juego si te dirijes abajo a Inf. Acciones.</li>
+                                <li>Mandas a un grupo de trabajadores a recoger carbón de unos pequeños pozos, traeran 40 o 80 si tienes los trineos.</li>
+                                <li>Mandas a un grupo de trabajadores a comida en los montones de nive, traeran 30 o 50 si tienes los trineos.</li>
+                                <li>Mandas a un grupo de trabajadores a recoger madera de los arboles, traeran 20 o 40 si tienes los trineos.</li>
+                                <li>Mandas a un grupo de trabajadores a recoger metal del tren, traeran 10 o 20 si tienes los trineos.</li>
+                                <li>Reunes a un grupo de ingenieros para recrear el mayor artefacto de la humanidad, unicamente podran crear 1.</li>
+                            </ol>
+                        
+                            <h3>Tecnología:</h3>
+                            <ol>
+                                <li>Puede realizar tareas como cualquier otro tabajador, solo necesita carbon para vivir, aumenta el consumo de carbón en 10 por día.</li>
+                                <li>Aumenta la cantidad de recursos que pueden obtener tus trabajadores (+20 a la caza, +20 a la recolección de carbón, +20 a la obtención de madera y +10 a la recolección de metal).</li>
+                                <li>Reduce gran parte del consumo de carbón del generador, de -40 por día a -30 por día.</li>
+                                <li>Aumenta la potencia del generador para porder afrontar los días más frios.</li>
+                                <li>Evita que el generador expote debido a su poco mantenimiento y alto uso.</li>
+                                <li>Podras construir casas en lugar de campamentos, así podras asegurarte de que tus trabajadores no enfermen.</li>
+                            </ol>
+                        
+                            <h3>Construcciones:</h3>
+                            <ol>
+                                <li>Un monton de tiendas para poder afrontar el frio como se pueda, maximo 8 campamentos y la cantidad de enfermos se reduce a la mitad por día.</li>
+                                <li>Un lugar calido donde pueden descansar tu pueblo, maximo 8 casas y reduce la enfermedad a 0 por cada día (siempre que esten las 8 casas).</li>
+                                <li>Aumenta la esperanza en 30.</li>
+                                <li>El perfecto refugio para los masjovenes con una capacidad para 20 niños.</li>
+                                <li>Cura a 10 enfermos por cada día, sí tienes dos puestos cura 20 por cada día y por ultimo si tienes 3 se curaran todos los enfermos, puedes construir hasta un maximo de 3 puestos médicos (Se curan a la hora 20)</li>
+                                <li>Reduce el descontento en 40, esto puede llegar a ser muy importante dada la ocuasión o muy tragico si se realiza una construcción temprana.</li>
+                            </ol>
+                        </p>                        
+                    </div>
+                </td>
+            </tr>        
+        </table>
+        <table id="tablaEn2" name="tablaEn2" style="display: none;">
+            <!-- Contenido de la segunda tabla en inglés -->
+            <tr>
+                <td>
+                    <div class="cTexto">
+                        <h2 id="Pen1">Start.</h2>
+                        <hr width="100%">
+                        <p> 
+                            This will be a small scan of a great game that already exists, but has not been made with html and much less by a single person, all the videos that appear throughout this small game are photos taken as is from a game that I have played, plus I have hidden some Easter eggs.
+                        </p>
+
+                        <h2 id="Pen2">Staging.</h2>
+                        <hr width="100%">
+                        <p>
+                            It is set in an alternate 1886 in which the eruptions of Krakatoa and Mount Tambora, the dimming of the Sun, and other unknown factors caused a global volcanic winter. This, in turn, led to widespread crop failure and the deaths of millions of people.
+                        </p>
+
+                        <h2 id="Pen3">What is the objetive?</h2>
+                        <hr width="100%">
+                        <p>
+                            The goal is simple: survive for 15 days in the FrostPunk universe. Each day, you will receive a small invented story to provide some entertainment during the days you have under control.
+                        
+                            <h3>Be very careful with these things:</h3>
+                            <ol>
+                                <li>Food cannot reach 0.</li>
+                                <li>Coal cannot reach 0.</li>
+                                <li>The generator cannot explode.</li>
+                                <li>You cannot have the cold bar too high.</li>
+                                <li>You cannot have the hope bar too low.</li>
+                                <li>You cannot have the discontent bar too high.</li>
+                            </ol>
+                        </p>                        
+
+                        <h2 id="Pen4">Different actions, technologies and constructions.</h2>
+                        <hr width="100%">
+                        <p>
+                            <h3>Actions:</h3>
+                            <ol>
+                                <li>Actions are explained in more detail in the game if you go down to Inf. Actions.</li>
+                                <li>Send a group of workers to collect coal from small pits; they will bring 40 or 80 if you have sleds.</li>
+                                <li>Send a group of workers to gather food from snowdrifts; they will bring 30 or 50 if you have sleds.</li>
+                                <li>Send a group of workers to collect wood from trees; they will bring 20 or 40 if you have sleds.</li>
+                                <li>Send a group of workers to collect metal from the train; they will bring 10 or 20 if you have sleds.</li>
+                                <li>Gather a group of engineers to recreate the greatest artifact of humanity; you can only create 1.</li>
+                            </ol>
+                        
+                            <h3>Technology:</h3>
+                            <ol>
+                                <li>Can perform tasks like any other worker, only needs coal to live, increases coal consumption by 10 per day.</li>
+                                <li>Increases the amount of resources your workers can obtain (+20 to hunting, +20 to coal mining, +20 to wood gathering, and +10 to metal mining).</li>
+                                <li>Reduces a significant portion of the generator's coal consumption, from -50 per day to -30 per day.</li>
+                                <li>Increases the generator's power to cope with colder days.</li>
+                                <li>Prevents the generator from exploding due to low maintenance and high usage.</li>
+                                <li>You can build houses instead of camps, ensuring that your workers do not get sick.</li>
+                            </ol>
+                        
+                            <h3>Constructions:</h3>
+                            <ol>
+                                <li>A pile of tents to cope with the cold as best as possible, maximum 8 camps, and the number of sick people is reduced by half per day.</li>
+                                <li>A warm place where your people can rest, maximum 8 houses, and reduces sickness to 0 per day (provided all 8 houses are present).</li>
+                                <li>Increases hope by 30.</li>
+                                <li>The perfect refuge for the young with a capacity for 20 children.</li>
+                                <li>Heals 10 sick people per day; if you have two medical posts, it heals 20 per day, and finally, with three, all sick people are healed. You can build a maximum of 3 medical posts (They heal at hour 20).</li>
+                                <li>Reduces discontent by 40, which can be crucial given the situation or tragic if built early.</li>
+                            </ol>
+                        </p>                                                
+                    </div>
+                </td>
+            </tr>            
+        </table>
+    </div>
+</body>

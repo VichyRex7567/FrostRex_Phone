@@ -1,0 +1,51 @@
+/* Estilos para contenedor de barras de progreso */
+.barra-container {
+    display: flex; /* Usa flexbox para diseño flexible */
+    flex-direction: column; /* Dirección de columna para alinear verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    margin-bottom: 20px; /* Añade margen inferior para separar del siguiente elemento */
+}
+
+/* Estilos para barras de progreso individuales */
+.barra {
+    width: 90%; /* Ancho del contenedor de la barra */
+    max-width: 400px; /* Ancho máximo de la barra */
+    height: 15px; /* Altura de la barra */
+    border-radius: 5px; /* Borde redondeado */
+    overflow: hidden; /* Oculta el contenido que sobresale */
+    margin-bottom: 10px; /* Espacio inferior entre barras */
+    position: relative; /* Posición relativa para elementos posicionados internamente */
+    background-color: #f2f2f2; /* Color de fondo de la barra */
+}
+
+/* Estilos para la parte de progreso dentro de la barra */
+.barra-progreso {
+    height: 100%; /* Altura máxima del progreso */
+    transition: width 0.5s ease; /* Transición suave del ancho */
+}
+
+/* Variables para controlar los valores de las barras de progreso */
+:root {
+    --esperanza: 50%; /* Porcentaje de progreso de esperanza */
+    --descontento: 50%; /* Porcentaje de progreso de descontento */
+    --temperatura: 50%; /* Porcentaje de progreso de temperatura */
+}
+
+/* Estilos específicos para la barra de progreso de temperatura */
+.barra-progreso-temperatura {
+    background-color: #2998ff; /* Color de fondo para temperatura */
+    width: var(--temperatura); /* Ancho basado en la variable temperatura */
+    position: relative; /* Posición relativa */
+}
+
+/* Estilos específicos para la barra de progreso de esperanza */
+.barra-progreso-verde {
+    background-color: green; /* Color de fondo verde */
+    width: var(--esperanza); /* Ancho basado en la variable esperanza */
+}
+
+/* Estilos específicos para la barra de progreso de descontento */
+.barra-progreso-roja {
+    background-color: red; /* Color de fondo rojo */
+    width: var(--descontento); /* Ancho basado en la variable descontento */
+}

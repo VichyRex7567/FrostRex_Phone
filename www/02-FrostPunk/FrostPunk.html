@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrostPunk.html</title>
+
+    <link rel="stylesheet" href="./01-Css/barras.css">
+    <link rel="stylesheet" href="./01-Css/body.css">
+    <link rel="stylesheet" href="./01-Css/desplegables.css">
+    <link rel="stylesheet" href="./01-Css/modales.css">
+    <link rel="stylesheet" href="./01-Css/progreso.css">
+    <link rel="stylesheet" href="./01-Css/steampunkbotones.css">
+    <link rel="stylesheet" href="./01-Css/tablas.css">
+
+    <script src="./02-Js/contador.js"></script>
+    <script src="./02-Js/modales.js"></script>
+</head>
+<body>
+    <!-- Tabla de la parte superior -->
+    <table class="tablatop" id="tablatop" style="display: none;">
+        <tr>
+            <td>
+                <p id="valorMadera" name="valorMadera"></p>
+            </td>     
+
+            <td>
+                <p id="valorComida" nmae="valorComida"></p>
+            </td>   
+
+            <td>
+                <p id="valorEnfermos" name="valorEnfermos"></p>
+            </td>
+
+            <td>
+                <p id="valorTrabajadores" name="valorTrabajadores"></p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p id="valorMetal" name="valorMetal"></p>
+            </td>
+
+            <td>
+                <p id="valorCarbon" name="valorCarbon"></p>
+            </td>
+
+            <td>
+                <p id="valorMuertos" name="valorMuertos"></p>
+            </td>
+
+            <td>
+                <p id="valorIngenieros" name="valorIngenieros"></p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p id="valorNucleos" name="valorNucleos"></p>
+                <p id="valorAutomatas" name="valorAutomatas" style="display: none;"></p>
+            </td>
+
+            <td colspan="2">
+                <div class="barra-container-horizontal" align="center">
+                    <label for="temperatura">Temperatura:</label>
+                    <!-- Barra de progreso azul claro horizontal con fondo -->
+                    <div class="barra" align="left">
+                        <div class="barra-progreso barra-progreso-temperatura"></div>
+                    </div>                    
+                </div>
+            </td>
+
+            <td>
+                <p id="valorNinnos" name="valorNinnos"></p>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="4">
+                <!-- Tabla de la parte central -->
+                <table class="tablamid" id="tablamid">
+                    <tr>
+                        <td class="tablamid1">
+                            <div>Hora: <span id="horas">0</span></div>
+                        </td>
+                                        
+                        <td class="tablamid2">
+                            <div>Día: <span id="dias">0</span></div>
+                        </td>
+                    </tr>               
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table id="tablabuttons" class="tablabuttons" style="display: none;">
+        <tr>
+            <td colspan="2">
+                <button class="steampunk-button" onclick="ReMadera()">Recolectar madera</button>
+            </td>
+            <td colspan="2">
+                <button class="steampunk-button" onclick="ReNucleo()" id="crearvapor">Crear nucleo de vapor</button>
+                
+            </td>
+            <td colspan="2">
+                <button class="steampunk-button" onclick="ReMetal()">Recolectar metal</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <button class="steampunk-button" onclick="ReComida()">Buscar comida</button>
+            </td>
+            <td colspan="3">
+                <button class="steampunk-button" onclick="ReCarbon()">Recolectar carbón</button>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Botón para iniciar la reproducción y la partida -->
+    <button id="BotonEmp" style="position: absolute; top: 50%;" class="steampunk-button" onclick="empezar()">Empezar</button>
+
+    <!-- Aquí se mostraran las fotos -->
+    <img name="progreso" id="progreso">
+
+    <!-- Script para la lista de canciones que estaran de fondo miestras juegas -->
+    <script>
+        let sound = new Audio('../05-Musica/FrostPunk.mp3');
+
+        BotonEmp.addEventListener('click', ()=>{
+            sound.play();
+        })
+    </script>
+
+    <!-- Tabla de la parte inferior -->
+    <table class="tablabot" id="tablabot" style="display: none;">
+        <tr>
+            <td colspan="2">
+                <div class="barra-container">
+                    <label for="esperanza">Esperanza:</label>
+                    <div class="barra">
+                        <div class="barra-progreso barra-progreso-verde"></div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <div class="barra-container">
+                    <label for="descontento">Descontento:</label>
+                    <div class="barra">
+                        <div class="barra-progreso barra-progreso-roja"></div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="dropdown">
+                    <span>Tecnología</span>
+                    <div class="dropdown-content">
+                        <a href="javascript:void(0);" onclick="TecEficiencia()" id="rendimientonone">Eficiencia</a>
+                        <a href="javascript:void(0);" onclick="TecPotencia()" id="calornone">Potencia</a>
+                        <a href="javascript:void(0);" onclick="TecProteccion()" id="explosionnone">Protección</a>
+                        <a href="javascript:void(0);" onclick="TecCapacidad()" id="trineosnone">Recolección mejorada</a>
+                        <a href="javascript:void(0);" onclick="TecViviendas()" id="mejoresnone">Viviendas mejoradas</a>
+                        <a href="javascript:void(0);" onclick="TecAutomata()" id="automatanone">Automatas</a>
+                    </div>
+                </div>
+            </td>
+
+            <td>
+                <div class="dropdown">
+                    <span>Construciones</span>
+                    <div class="dropdown-content">
+                        <a href="javascript:void(0);" onclick="ConsCampamento()" id="acampadanone">Campamento</a>
+                        <a href="javascript:void(0);" onclick="ConsCasa()" id="casanone" style="display: none;">Casa</a>
+                        <a href="javascript:void(0);" onclick="ConsMedico()" id="mediconone">Puesto médico</a>
+                        <a href="javascript:void(0);" onclick="ConsPub()" id="pubnone">Pub</a>
+                        <a href="javascript:void(0);" onclick="ConsHospicio()" id="hostalnone">Hospicio</a>
+                        <a href="javascript:void(0);" onclick="ConsCementerio()" id="descansonone">Cementerio</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <table id="tablainf" class="tablainf" style="display: none;">
+        <tr>
+            <td style="text-align: center;">
+                <div class="dropdown">
+                    <span>Inf. Tecnología</span>
+                    <div class="dropdown-content">
+                        <a href="javascript:void(0);" onclick="Teficiencia()">Eficiencia</a>
+                        <a href="javascript:void(0);" onclick="Tpotencia()">Potencia</a>
+                        <a href="javascript:void(0);" onclick="Tproteccion()">Protección</a>
+                        <a href="javascript:void(0);" onclick="Tcapacidad()">Recolección mejorada</a>
+                        <a href="javascript:void(0);" onclick="Tviviendas()">Viviendas mejoradas</a>
+                        <a href="javascript:void(0);" onclick="Tautomatas()">Automatas</a>
+                    </div>
+                </div>
+            </td>
+
+            <!-- Script para los botones del desplegable de Tecnología -->
+            <script>
+                function Teficiencia() {
+                    var url = './03-Ventanas/03-Tecnologia/Eficiencia.html'; // URL del archivo HTML a cargar
+                    loadContent(url);                
+                }
+
+                function Tpotencia() {
+                    var url = './03-Ventanas/03-Tecnologia/Potencia.html'; // URL del archivo HTML a cargar
+                    loadContent(url);
+                }
+
+                function Tproteccion() {
+                    var url = './03-Ventanas/03-Tecnologia/Proteccion.html'; // URL del archivo HTML a cargar
+                    loadContent(url);
+                }
+
+                function Tcapacidad() {
+                    var url = './03-Ventanas/03-Tecnologia/Capacidad.html'; // URL del archivo HTML a cargar
+                    loadContent(url);
+                }
+
+                function Tviviendas() {
+                    var url = './03-Ventanas/03-Tecnologia/Viviendas.html'; // URL del archivo HTML a cargar
+                    loadContent(url);
+                }
+
+                function Tautomatas() {
+                    var url = './03-Ventanas/03-Tecnologia/Automatas.html'; // URL del archivo HTML a cargar
+                    loadContent(url);
+                }
+            </script>
+
+            <td style="text-align: center;">
+                <div class="dropdown">
+                    <span>Inf. Acciones</span>
+                    <div class="dropdown-content">
+                        <a href="javascript:void(0);" onclick="AcInf()">Información sobre las acciones</a>
+                        <a href="javascript:void(0);" onclick="AcMadera()">Recolectar madera</a>
+                        <a href="javascript:void(0);" onclick="AcMetal()">Recolectar metal</a>
+                        <a href="javascript:void(0);" onclick="AcCarbon()">Recolectar carbón</a>
+                        <a href="javascript:void(0);" onclick="BusComida()">Buscar comida</a>
+                        <a href="javascript:void(0);" onclick="CreNucleo()">Crear nucleo de vapor</a>
+                    </div>
+                </div>
+            </td>
+
+            <!-- Script para los botones del desplegable de Construciones -->
+            <script>
+                function AcInf() {
+                    var url = './03-Ventanas/05-Acciones/AccionesInf.html'; // URL del archivo HTML a cargar
+                    loadContent(url);
+                }
+
+                function AcMadera() {
+                    var url = './03-Ventanas/05-Acciones/Madera.html'; // URL del archivo HTML a cargar
+                    loadContent(url);
+                }
+
+                function AcMetal() {
+                    var url = './03-Ventanas/05-Acciones/Metal.html'; // URL del archivo HTML a cargar
+                    loadContent(url);
+                }
+
+                function AcCarbon() {
+                    var url = './03-Ventanas/05-Acciones/Carbon.html'; // URL del archivo HTML a cargar
+                    loadContent(url);
+                }
+
+                function BusComida() {
+                    var url = './03-Ventanas/05-Acciones/Comida.html'; // URL del archivo HTML a cargar
+                    loadContent(url);
+                }
+
+                function CreNucleo() {
+                    var url = '../02-FrostPunk/03-Ventanas/08-Historias/13H.html'; // URL del archivo HTML a cargar
+                    loadContent(url);
+                }
+            </script>
+
+
+            <td style="text-align: center;">
+                <div class="dropdown">
+                    <span>Inf. Construciones</span>
+                    <div class="dropdown-content">
+                        <a href="javascript:void(0);" onclick="Ccampamento()">Campamento</a>
+                        <a href="javascript:void(0);" onclick="Ccasa()">Casa</a>
+                        <a href="javascript:void(0);" onclick="Cpmedico()">Puesto médico</a>
+                        <a href="javascript:void(0);" onclick="Cpub()">Pub</a>
+                        <a href="javascript:void(0);" onclick="Chospicio()">Hospicio</a>
+                        <a href="javascript:void(0);" onclick="Ccementerio()">Cementerio</a>
+                    </div>
+                </div>
+            </td>
+
+            <!-- Script para los botones del desplegable de Construciones -->
+            <script>
+                function Ccampamento() {
+                    var url = './03-Ventanas/04-Construcciones/Campamento.html'; // URL del archivo HTML a cargar
+                    loadContent(url);
+                }
+
+                function Ccasa() {
+                    var url = './03-Ventanas/04-Construcciones/Casa.html'; // URL del archivo HTML a cargar
+                    loadContent(url);
+                }
+
+                function Cpmedico() {
+                    var url = './03-Ventanas/04-Construcciones/Medico.html'; // URL del archivo HTML a cargar
+                    loadContent(url);
+                }
+
+                function Cpub() {
+                    var url = './03-Ventanas/04-Construcciones/Pub.html'; // URL del archivo HTML a cargar
+                    loadContent(url);
+                }
+
+                function Chospicio() {
+                    var url = './03-Ventanas/04-Construcciones/Hospicio.html'; // URL del archivo HTML a cargar
+                    loadContent(url);
+                }
+
+                function Ccementerio() {
+                    var url = './03-Ventanas/04-Construcciones/Cementerio.html'; // URL del archivo HTML a cargar
+                    loadContent(url);
+                }
+            </script>
+
+        </tr>
+    </table>
+
+    <!-- Modal Genérico -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body">
+                <!-- El contenido dinámico se cargará aquí -->
+            </div>
+        </div>
+    </div>
+</body>

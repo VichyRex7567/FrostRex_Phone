@@ -1,0 +1,32 @@
+/* Estilo del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posición fija para que esté siempre visible */
+    z-index: 1; /* Coloca el modal por encima del contenido */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    overflow: auto; /* Permite desplazamiento si el contenido es grande */
+    background-color: #4a4a4a; /* Color de fondo gris oscuro */
+    background-color: rgba(0,0,0,0.4); /* Fondo semi-transparente */
+    padding-top: 60px; /* Espacio arriba para separar del borde superior */
+    color: #fff; /* Color de texto blanco */
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: #4a4a4a; /* Color de fondo del contenido */
+    margin: 5% auto; /* Margen 5% arriba y abajo, centrado horizontalmente */
+    padding: 20px; /* Relleno interno del contenido */
+    border: 2px solid #d4af37; /* Borde sólido dorado */
+    width: 80%; /* Ancho del contenido del modal */
+}
+
+/* Botón de cierre */
+.close {
+    color: #ff0000; /* Color del texto del botón de cierre (rojo) */
+    float: right; /* Colocación a la derecha */
+    font-size: 28px; /* Tamaño de fuente grande */
+    font-weight: bold; /* Texto en negrita */
+}
